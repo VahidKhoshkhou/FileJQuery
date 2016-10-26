@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+//definisco un path che mando in argomento al secondo metodo che torna un "form" e lo invia.
+//il .submit() equivale al click sul pulsante e quindi l'invio del comando
+function doDelete(){
+var path='doDelete.jsp';
+var form=create(path);
+form.submit();
+}
+//Credo e ritorno l'elemento form, chiamandolo con createElement dandogli in pasto il nome del tag HTML
+//gli assegno method (post/get) e action (path al file che gestisce il form)
+function create(path){
+var form = document.createElement("form");
+form.method='GET';
+form.action=path;
+var element = document.getElementById("a");
+element.appendChild(form);
+return form;
+}
+</script>
+</head>
+<body id="a">
+<input type="button" value="Delete" size="2" onclick="doDelete();">
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function() {
+		var punteggio = 0;
+		
+		
+	$("#spara").click(function(){
+	
+        $("#immagine2").animate({right: "+=50%"});
+		
+		 
+		punteggio=punteggio+100;
+		$("#punti").val(punteggio);
+		
+		
+		$("#immagine2").animate({right: "-=50%"});
+    });
+	
+	$("#reset").click(function(){
+		punteggio = 0;
+        $("#punti").val("");
+    });
+});
+</script>
+<style>
+
+#immagine2 {
+	position: absolute;
+	right: 500px;
+	top: 80px;
+}
+</style>
+
+</head>
+<body>
+<img id="immagine1" src="img/goku1.png" width="150" height="250" />
+<img id="immagine2" src="img/proiettile.png" width="50" height="50" />
+
+<br><br>
+
+<input type="text" id="punti">
+<input type="button" value=" spara " id="spara">
+<input type="button" value=" reset " id="reset">
+</body>
+</html>

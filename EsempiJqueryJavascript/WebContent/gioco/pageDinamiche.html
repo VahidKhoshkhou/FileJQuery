@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+//definisco un path che mando in argomento al secondo metodo che torna un "form" e lo invia.
+//il .submit() equivale al click sul pulsante e quindi l'invio del comando
+function doDelete(){
+
+var form=createForm('http://youtube.com');
+form.submit();
+}
+//Credo e ritorno l'elemento form, chiamandolo con createElement dandogli in pasto il nome del tag HTML
+//gli assegno method (post/get) e action (path al file che gestisce il form)
+var a=function createForm (path){
+var form = document.createElement("form");
+form.method='GET';
+form.action=path;
+/*
+var in1=document.createElement("input");
+   in1.setAttribute('type',"hidden");
+    in1.setAttribute('name',"username");
+   
+  
+	 form.appendChild(in1);
+	 */
+
+var bodyElement = document.getElementById("a");
+bodyElement.appendChild(form);
+return form;
+}
+
+
+</script>
+</head>
+<body id="a">
+
+<p onclick="doDelete();">delete</p>
+
+
+
+
+
+</body>
+</html>
